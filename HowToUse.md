@@ -8,10 +8,10 @@ https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumptio
 
 Clone this project, open the R Studio, set the working directory and run the following commands in R:
 ```
-sources("Plot<N>.R")
+sources("Plot[N].R")
 construct_plot()
 ```
-where <N> is the plot number 1, 2, 3 or 4.
+where [N] is the plot number 1, 2, 3 or 4.
 
 Example:
 ```
@@ -20,9 +20,10 @@ construct_plot()
 ```
 
 You can also specify your dataset root directory:
+
 ```
 sources("Plot2.R")
 construct_plot("C:/exploratory-data-analysis/project-1/household_power_consumption.txt")
 ```
 
-It will create the corresponding png file Plot<N>.png in your working directory.
+It will create the corresponding png file Plot[N].png (e.g: Plot2.png) in your working directory.
