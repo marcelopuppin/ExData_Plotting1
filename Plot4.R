@@ -1,4 +1,6 @@
-#setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
+# Data.R contains functions to read the dataset and create a tidy data 
+# to be used when constructing the plot. 
+source("Data.R")
 
 construct_plot <- function(dataset_path = "household_power_consumption.txt",
                            png_path = "Plot4.png") {
@@ -16,18 +18,6 @@ construct_plot <- function(dataset_path = "household_power_consumption.txt",
   create_plot_bottom_right(tidydata) 
   
   dev.off()
-}
-
-read_dataset <- function(dataset_path) {
-  dataset <- read.table(dataset_path, header=TRUE, sep=";", dec=".")
-  dataset
-}
-
-create_tidy_data <- function(dataset) {
-  only_feb_2007 <- dataset$Date %in% c("1/2/2007","2/2/2007")
-  is_question_mark <- dataset$Global_active_power == "?" 
-  tidy_data <- dataset[(only_feb_2007 & !is_question_mark),]
-  tidy_data
 }
 
 create_plot_top_left <- function(tidy_data) {
