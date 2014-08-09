@@ -1,4 +1,4 @@
-setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
+#setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
 
 construct_plot <- function(dataset_path = "../household_power_consumption.txt",
                            png_path = "Plot3.png") {
@@ -38,8 +38,7 @@ create_plot_png <- function(tidy_data, path) {
   
   legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch=c("_","_","_"), col=c("black","red","blue"))
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
   
   dev.off()
 }

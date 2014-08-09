@@ -1,4 +1,4 @@
-setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
+#setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
 
 construct_plot <- function(dataset_path = "../household_power_consumption.txt",
                            png_path = "Plot1.png") {

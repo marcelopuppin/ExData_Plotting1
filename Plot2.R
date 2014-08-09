@@ -1,4 +1,4 @@
-setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
+#setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
 
 construct_plot <- function(dataset_path = "../household_power_consumption.txt",
                            png_path = "Plot2.png") {
@@ -39,12 +39,11 @@ create_plot_png <- function(tidy_data, path) {
   png(filename=path, width=480, height=480)
   
   plot(as.numeric(as.character(tidy_data$Global_active_power)), 
-       type="l", 
+       type="l",
        xlab="", xaxt="n",
        ylab="Global Active Power (kilowatts)")  
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
   
   dev.off()
 }

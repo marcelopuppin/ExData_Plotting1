@@ -1,4 +1,4 @@
-setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
+#setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
 
 construct_plot <- function(dataset_path = "../household_power_consumption.txt",
                            png_path = "Plot4.png") {
@@ -36,8 +36,8 @@ create_plot_top_left <- function(tidy_data) {
        xlab="", xaxt="n",
        ylab="Global Active Power (kilowatts)")  
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
+  
 }
 
 create_plot_top_right <- function(tidy_data) {
@@ -46,8 +46,8 @@ create_plot_top_right <- function(tidy_data) {
        xlab="datetime", xaxt="n",
        ylab="Voltage")  
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
+  
 }
 
 create_plot_bottom_left <- function(tidy_data) {
@@ -66,8 +66,8 @@ create_plot_bottom_left <- function(tidy_data) {
   
   legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), pch=c("_","_","_"), col=c("black","red","blue"))
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
+
 }
   
 create_plot_bottom_right <- function(tidy_data) {
@@ -76,6 +76,5 @@ create_plot_bottom_right <- function(tidy_data) {
        xlab="datetime", xaxt="n",
        ylab="Global Reactive Power")  
   
-  days <- c("Thu", "Fri", "Sat")
-  axis(1, at=1:3, lab=days)
+  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
 }
