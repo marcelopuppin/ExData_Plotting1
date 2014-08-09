@@ -1,6 +1,6 @@
 #setwd("C:/Projects/R Exploratory Data/ExData_Plotting1")
 
-construct_plot <- function(dataset_path = "../household_power_consumption.txt",
+construct_plot <- function(dataset_path = "household_power_consumption.txt",
                            png_path = "Plot3.png") {
   
   dataset <- read_dataset(dataset_path)
