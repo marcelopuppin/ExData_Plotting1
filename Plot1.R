@@ -7,17 +7,15 @@ construct_plot <- function(dataset_path = "household_power_consumption.txt",
   
   dataset <- read_dataset(dataset_path)
   tidydata <- create_tidy_data(dataset)
-  create_plot_png(tidydata, png_path) 
+  
+  png(filename=png_path, width=480, height=480)
+  create_frequency_by_global_active_power_plot(tidydata)
+  dev.off()
 }
 
-create_plot_png <- function(tidy_data, path) {
-  png(filename=path, width=480, height=480)
-  
+create_frequency_by_global_active_power_plot <- function(tidy_data) {
   hist(as.numeric(as.character(tidy_data$Global_active_power)), 
        col="red",
        main="Global Active Power", 
        xlab="Global Active Power (kilowatts)")
-  
-  dev.off()
 }
-  

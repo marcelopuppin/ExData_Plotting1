@@ -7,19 +7,18 @@ construct_plot <- function(dataset_path = "household_power_consumption.txt",
   
   dataset <- read_dataset(dataset_path)
   tidydata <- create_tidy_data(dataset)
-  create_plot_png(tidydata, png_path) 
+  
+  png(filename=png_path, width=480, height=480)
+  create_global_active_power_by_dates_plot(tidydata)
+  dev.off()
 }
 
-create_plot_png <- function(tidy_data, path) {
-  png(filename=path, width=480, height=480)
-  
+create_global_active_power_by_dates_plot <- function(tidy_data) {
   plot(as.numeric(as.character(tidy_data$Global_active_power)), 
        type="l",
        xlab="", xaxt="n",
        ylab="Global Active Power (kilowatts)")  
   
-  axis(1, at=c(0,1450,2900), c("Thu", "Fri", "Sat"))
-  
-  dev.off()
+  count_dates <- length(tidy_data$Date)
+  axis(1, at=c(0,count_dates/2,count_dates), c("Thu", "Fri", "Sat"))
 }
-  
